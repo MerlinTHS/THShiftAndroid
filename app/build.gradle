@@ -47,8 +47,13 @@ android {
 }
 
 dependencies {
+    // Ktor
     implementation("io.ktor:ktor-client-core:2.2.4")
     implementation("io.ktor:ktor-client-okhttp:2.2.4")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
