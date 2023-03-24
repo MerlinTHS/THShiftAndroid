@@ -11,15 +11,15 @@ import kotlinx.coroutines.flow.asSharedFlow
 class SimpleEventViewModel(
     private val repository: EventRepository
 ) : EventViewModel() {
-    private val _all = MutableStateFlow(emptyList<Event>())
-    override val allEvents = _all.asSharedFlow()
+    private val _allEvents = MutableStateFlow(emptyList<Event>())
+    override val allEvents = _allEvents.asSharedFlow()
 
     init {
         refresh()
     }
 
     override fun refresh() = ioThread {
-        _all.value = repository.getAllEvents()
+        _allEvents.value = repository.getAllEvents()
     }
 
     override fun createEvent(info: CreateEventInfo) = ioThread {
